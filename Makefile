@@ -8,9 +8,9 @@
 #instead of include, here for simplicty of testing
 VERSION=0.1.0
 HUBUSER=tricia
-RUN_NAME=flastpytravis
+RUN_NAME=flaskpytravis
 HOST_PORT=5555
-CONTAINER_PORT=5000   # default for flask
+CONTAINER_PORT=80   # default for flask
 HEROKU1=wordcount-pmc-stage
 #export $(shell sed 's/=.*//' $(cnf))
  

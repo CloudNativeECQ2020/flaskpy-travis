@@ -1,13 +1,15 @@
 # setup on heroku
 may not need all of this (git repos) as I am using a container
 
-ref https://devcenter.heroku.com/articles/heroku-cli-commands
+ref 
+* https://devcenter.heroku.com/articles/heroku-cli-commands
+* https://devcenter.heroku.com/articles/container-registry-and-runtime
 
 omit git push to heroku
 1. [create](#create) heroku apps (prod & stage) 
 2. [build](#build)  build the container
 3. [run](#run) run the container locally 
-3. [publish to heroku](#publish to heroku) push the container
+3. [publish to heroku](#publish-to-heroku) push the container
  
 
 ## create

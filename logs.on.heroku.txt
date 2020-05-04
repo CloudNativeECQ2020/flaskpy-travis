@@ -1,0 +1,66 @@
+2020-05-01T21:00:32.556250+00:00 app[api]: Initial release by user pcampbell.edu@gmail.com
+2020-05-01T21:00:32.556250+00:00 app[api]: Release v1 created by user pcampbell.edu@gmail.com
+2020-05-01T21:00:32.888682+00:00 app[api]: Enable Logplex by user pcampbell.edu@gmail.com
+2020-05-01T21:00:32.888682+00:00 app[api]: Release v2 created by user pcampbell.edu@gmail.com
+2020-05-02T00:02:30.170452+00:00 app[api]: Scaled to web@1:Free by user pcampbell.edu@gmail.com
+2020-05-02T00:02:30.094379+00:00 app[api]: Deployed web (599bae15821d) by user pcampbell.edu@gmail.com
+2020-05-02T00:02:30.094379+00:00 app[api]: Release v3 created by user pcampbell.edu@gmail.com
+2020-05-02T00:02:34.907122+00:00 heroku[web.1]: State changed from starting to crashed
+2020-05-02T00:02:34.910379+00:00 heroku[web.1]: State changed from crashed to starting
+2020-05-02T00:02:34.806967+00:00 app[web.1]: * Serving Flask app "app" (lazy loading)
+2020-05-02T00:02:34.806994+00:00 app[web.1]: * Environment: production
+2020-05-02T00:02:34.807073+00:00 app[web.1]: WARNING: This is a development server. Do not use it in a production deployment.
+2020-05-02T00:02:34.807121+00:00 app[web.1]: Use a production WSGI server instead.
+2020-05-02T00:02:34.807164+00:00 app[web.1]: * Debug mode: on
+2020-05-02T00:02:34.817130+00:00 app[web.1]: Traceback (most recent call last):
+2020-05-02T00:02:34.817130+00:00 app[web.1]: File "./app.py", line 24, in <module>
+2020-05-02T00:02:34.817131+00:00 app[web.1]: app.run(host="0.0.0.0",port=80,debug=True)
+2020-05-02T00:02:34.817141+00:00 app[web.1]: File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 990, in run
+2020-05-02T00:02:34.817141+00:00 app[web.1]: run_simple(host, port, self, **options)
+2020-05-02T00:02:34.817142+00:00 app[web.1]: File "/usr/local/lib/python3.8/site-packages/werkzeug/serving.py", line 1030, in run_simple
+2020-05-02T00:02:34.817142+00:00 app[web.1]: s.bind(server_address)
+2020-05-02T00:02:34.817142+00:00 app[web.1]: PermissionError: [Errno 13] Permission denied
+2020-05-02T00:02:42.584097+00:00 heroku[web.1]: State changed from starting to crashed
+2020-05-02T00:02:42.357770+00:00 app[web.1]: * Serving Flask app "app" (lazy loading)
+2020-05-02T00:02:42.357795+00:00 app[web.1]: * Environment: production
+2020-05-02T00:02:42.357869+00:00 app[web.1]: WARNING: This is a development server. Do not use it in a production deployment.
+2020-05-02T00:02:42.359122+00:00 app[web.1]: Use a production WSGI server instead.
+2020-05-02T00:02:42.359197+00:00 app[web.1]: * Debug mode: on
+2020-05-02T00:02:42.386726+00:00 app[web.1]: Traceback (most recent call last):
+2020-05-02T00:02:42.386729+00:00 app[web.1]: File "./app.py", line 24, in <module>
+2020-05-02T00:02:42.386729+00:00 app[web.1]: app.run(host="0.0.0.0",port=80,debug=True)
+2020-05-02T00:02:42.386730+00:00 app[web.1]: File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 990, in run
+2020-05-02T00:02:42.386731+00:00 app[web.1]: run_simple(host, port, self, **options)
+2020-05-02T00:02:42.386732+00:00 app[web.1]: File "/usr/local/lib/python3.8/site-packages/werkzeug/serving.py", line 1030, in run_simple
+2020-05-02T00:02:42.386732+00:00 app[web.1]: s.bind(server_address)
+2020-05-02T00:02:42.386733+00:00 app[web.1]: PermissionError: [Errno 13] Permission denied
+2020-05-02T00:24:38.206222+00:00 heroku[web.1]: State changed from crashed to starting
+2020-05-02T00:24:41.856183+00:00 heroku[web.1]: State changed from starting to crashed
+2020-05-02T00:24:41.780108+00:00 app[web.1]: * Serving Flask app "app" (lazy loading)
+2020-05-02T00:24:41.780128+00:00 app[web.1]: * Environment: production
+2020-05-02T00:24:41.780174+00:00 app[web.1]: WARNING: This is a development server. Do not use it in a production deployment.
+2020-05-02T00:24:41.780236+00:00 app[web.1]: Use a production WSGI server instead.
+2020-05-02T00:24:41.780263+00:00 app[web.1]: * Debug mode: on
+2020-05-02T00:24:41.789642+00:00 app[web.1]: Traceback (most recent call last):
+2020-05-02T00:24:41.789642+00:00 app[web.1]: File "./app.py", line 24, in <module>
+2020-05-02T00:24:41.789643+00:00 app[web.1]: app.run(host="0.0.0.0",port=80,debug=True)
+2020-05-02T00:24:41.789643+00:00 app[web.1]: File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 990, in run
+2020-05-02T00:24:41.789643+00:00 app[web.1]: run_simple(host, port, self, **options)
+2020-05-02T00:24:41.789643+00:00 app[web.1]: File "/usr/local/lib/python3.8/site-packages/werkzeug/serving.py", line 1030, in run_simple
+2020-05-02T00:24:41.789644+00:00 app[web.1]: s.bind(server_address)
+2020-05-02T00:24:41.789644+00:00 app[web.1]: PermissionError: [Errno 13] Permission denied
+2020-05-02T01:07:50.830895+00:00 heroku[web.1]: State changed from crashed to starting
+2020-05-02T01:07:54.963047+00:00 heroku[web.1]: State changed from starting to crashed
+2020-05-02T01:07:54.859024+00:00 app[web.1]: * Serving Flask app "app" (lazy loading)
+2020-05-02T01:07:54.859052+00:00 app[web.1]: * Environment: production
+2020-05-02T01:07:54.859107+00:00 app[web.1]: WARNING: This is a development server. Do not use it in a production deployment.
+2020-05-02T01:07:54.859169+00:00 app[web.1]: Use a production WSGI server instead.
+2020-05-02T01:07:54.859239+00:00 app[web.1]: * Debug mode: on
+2020-05-02T01:07:54.875620+00:00 app[web.1]: Traceback (most recent call last):
+2020-05-02T01:07:54.875621+00:00 app[web.1]: File "./app.py", line 24, in <module>
+2020-05-02T01:07:54.875621+00:00 app[web.1]: app.run(host="0.0.0.0",port=80,debug=True)
+2020-05-02T01:07:54.875622+00:00 app[web.1]: File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 990, in run
+2020-05-02T01:07:54.875623+00:00 app[web.1]: run_simple(host, port, self, **options)
+2020-05-02T01:07:54.875623+00:00 app[web.1]: File "/usr/local/lib/python3.8/site-packages/werkzeug/serving.py", line 1030, in run_simple
+2020-05-02T01:07:54.875624+00:00 app[web.1]: s.bind(server_address)
+2020-05-02T01:07:54.875624+00:00 app[web.1]: PermissionError: [Errno 13] Permission denied
