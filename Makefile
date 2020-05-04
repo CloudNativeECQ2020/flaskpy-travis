@@ -81,17 +81,17 @@ publish:  ## publish to  docker hub, interactive
         docker tag ${RUN_NAME} ${HUBUSER}/${RUN_NAME}:${VERSION}
         docker image push ${HUBUSER}/${RUN_NAME}:${VERSION}
 
-heroku-all: build heroku-create heroku-publish
-heroku-update: build heroku-publish
+heroku-all: build heroku-create heroku-publish ## create heroku app & build & push and release to heroku
+heroku-update: build heroku-publish ## build &  push and release to heroku
 heroku-publish: heroku-push-release ## push and release to heroku
 heroku-push-release: ## push and release to heroku
 	@echo push to the heroku repo
 	heroku container:push web --app $(HEROKU1)
 	@echo release app
-	heroku container:release web --app $()
+	heroku container:release web --app $(HEROKU1)
 	@echo if the last step worked load https://$(HEROKU1).herokuapp.com in a browser
 
-heroku-create: ## using heroku commands
+heroku-create: ## one time only, create app on heroku 
 	@echo interactive login to heroku
 	heroku login -i 
 	@echo create app on heroku 
@@ -104,11 +104,6 @@ TOKEN=$(cat $fn)
 endef 
 # needed for bash script
 # https://www.gnu.org/software/make/manual/html_node/One-Shell.html
-.ONESHELL:
+# .ONESHELL:
 
-heroku-via-docker:  	## use heroku cli to generate token  not working, abandoned
-	$(tokenfile)
-	docker login --username=_ -- password=$(TOKEN) registry.heroku.com
-	docker build -t registry.heroku.com/$(RUN_NAME)/web .
-	docker push registry.heroku.com/$(RUN_NAME)/web
 

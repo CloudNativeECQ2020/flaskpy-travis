@@ -1,7 +1,7 @@
 FROM python:3-alpine
 MAINTAINER P.M.Campbell pcampbell.edu@gmail.com
 
-RUN pip install --no-cache-dir Flask
+RUN pip install --no-cache-dir Flask &&  pip install --no-cache-dir pytz 
 
 COPY app.py /usr/local/bin/app.py 
 

@@ -4,12 +4,16 @@ may not need all of this (git repos) as I am using a container
 ref 
 * https://devcenter.heroku.com/articles/heroku-cli-commands
 * https://devcenter.heroku.com/articles/container-registry-and-runtime
+* shakespeare [ec](https://github.com/campbe13/docker-ecq2020/tree/master/shakespeare-ec)
+* shakespeare [jm](https://github.com/campbe13/docker-ecq2020/tree/master/shakespeare-jm)
 
 omit git push to heroku
 1. [create](#create) heroku apps (prod & stage) 
 2. [build](#build)  build the container
 3. [run](#run) run the container locally 
 3. [publish to heroku](#publish-to-heroku) push the container
+4. [try it via a browser](#try-it)  http://wordcount-pmc-stage.herokuapps.com 
+5. [track it via the logs](#track-it)
  
 
 ## create
@@ -164,5 +168,26 @@ release app
     Error: Flag --app expects a value
 if the last step worked load https://wordcount-pmc-stage.herokuapp.com in a browser
 tricia@acerubuntu1804:~/ecq/flaskpy-travis$
+```
+## try it   
+problems crashes
+![load website error(flask-heroku-error.PNG)
+## track it
+```
+tricia@acerubuntu1804:~/ecq/flaskpy-travis$ heroku logs --tail --app wordcount-pmc-stage
+...
+2020-05-04T18:16:24.993751+00:00 heroku[web.1]: State changed from crashed to starting
+2020-05-04T18:16:31.511559+00:00 app[web.1]: * Serving Flask app "app" (lazy loading)
+2020-05-04T18:16:31.511587+00:00 app[web.1]: * Environment: production
+2020-05-04T18:16:31.511676+00:00 app[web.1]: WARNING: This is a development server. Do not use it in a production deployment.
+2020-05-04T18:16:31.511752+00:00 app[web.1]: Use a production WSGI server instead.
+2020-05-04T18:16:31.511809+00:00 app[web.1]: * Debug mode: on
+2020-05-04T18:16:31.527085+00:00 app[web.1]: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-05-04T18:16:31.528285+00:00 app[web.1]: * Restarting with stat
+2020-05-04T18:16:31.742350+00:00 app[web.1]: * Debugger is active!
+2020-05-04T18:16:31.742844+00:00 app[web.1]: * Debugger PIN: 221-533-909
+2020-05-04T18:17:28.845410+00:00 heroku[web.1]: State changed from starting to crashed
+2020-05-04T19:19:10.333587+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=wordcount-pmc-stage.herokuapp.com request_id=bb381c9f-4552-463a-9c93-0389d6c0583a fwd="107.179.147.128" dyno= connect= service= status=503 bytes= protocol=http
+2020-05-04T19:19:10.509030+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=wordcount-pmc-stage.herokuapp.com request_id=1a86169f-8dde-475f-b4ae-614011cfa66d fwd="107.179.147.128" dyno= connect= service= status=503 bytes= protocol=http
 ```
 
