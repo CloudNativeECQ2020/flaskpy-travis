@@ -4,9 +4,20 @@ I tried a udacity course but it was not up to date so i am going to follow this 
 
 Because I am using a container, I don't need to do the setup on heroku, just on the container. 
 
+## part 2 Setting up Postgres, SQLAlchemy, and Alembic
+https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/
+
+todo check: using a base image python alpine, should I use a base image for PostgresSQL?
+todo decide if students should use alpine or ubuntu or redhat images ???
+1. update Dockerfile 
+    1. use apk to install postgres
+    2. a few  stmts to set up postgress &
+    2. requirements.txt added other pkgs needed
+see [part2 runtime](SETUPDBS.md)
+might need to use a postgres base image & install python instead of vice versa 
 ## part 1 basic setup
 https://realpython.com/flask-by-example-part-1-project-setup/ 
-1. run on container  (hello world .py)
+1. run on container  (see app/app.py & app/app2.py &  see Dockerfile.part1 & requirements.txt.part1
 2. run on heroku  see [setup on heroku](SETUPHEROKU.md)   (omit the push)
 
 ## install docker

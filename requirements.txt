@@ -1,2 +1,17 @@
+# requirements.txt for pip install
+# pkgs needed for app
+# if you've been testing locally, in an env then
+#  look at the output from pip freeze (or redirect here)
 Flask==1.0
 gunicorn==19.5.0
+# python adapter for postgres
+#pscopyg2==2.8.4
+psycopg2-binary
+# Flask extension that provides SQLAlchemy support
+flasksqlalchemy==2.4.1
+# extension that supports SQLAlchemy database migrations via Alembic
+flask-migrate==2.5.2
+# only needed for testing
+pytz==2020.1
+
+

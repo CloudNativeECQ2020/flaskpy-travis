@@ -10,7 +10,7 @@ VERSION=0.1.0
 HUBUSER=tricia
 RUN_NAME=flaskpytravis
 HOST_PORT=5555
-CONTAINER_PORT=80   # default for flask
+CONTAINER_PORT=5000   # default for flask
 HEROKU1=wordcount-pmc-stage
 #export $(shell sed 's/=.*//' $(cnf))
  
@@ -52,11 +52,11 @@ sh:	shell
 shell:  ## shell into the container
 	docker exec -ti $(RUN_NAME) sh
 
-all: clone build run
-up:  build run
+all: clone build run  ## clone, build and run locally
+up:  build run   ## build and run locally
 
-stoprun: stop run
-clean:  stop prune
+stoprun: stop run  ## stop, rm, run
+clean:  stop prune  ## stop, rm, system prune
 
 stop: ## stop and remove the container
 	docker stop $(RUN_NAME) ; docker rm $(RUN_NAME) ; docker ps

@@ -4,16 +4,29 @@ may not need all of this (git repos) as I am using a container
 ref 
 * https://devcenter.heroku.com/articles/heroku-cli-commands
 * https://devcenter.heroku.com/articles/container-registry-and-runtime
+* https://medium.com/@ksashok/containerise-your-python-flask-using-docker-and-deploy-it-onto-heroku-a0b48d025e43
+
 * shakespeare [ec](https://github.com/campbe13/docker-ecq2020/tree/master/shakespeare-ec)
 * shakespeare [jm](https://github.com/campbe13/docker-ecq2020/tree/master/shakespeare-jm)
+
 
 omit git push to heroku
 1. [create](#create) heroku apps (prod & stage) 
 2. [build](#build)  build the container
 3. [run](#run) run the container locally 
 3. [publish to heroku](#publish-to-heroku) push the container
-4. [try it via a browser](#try-it)  http://wordcount-pmc-stage.herokuapps.com 
-5. [track it via the logs](#track-it)
+4. working [try it via browser and check logs](#try-it-track-it-working)  http://wordcount-pmc-stage.herokuapps.com 
+5. before the fix, errors: [try it via browser and check logs](#try-it-track-it-before-fix)
+
+__Note:__  I had problems running the container on heroku. It worked when I ran the container locally but it kept crashing when I pushed and ran on heroku, the fix was in the app:
+```
+port = int(os.environ.get("PORT", 5000))
+# when I run the app
+    app.run(host="0.0.0.0",debug=True, port=port)
+```
+If this is not used the app crashes
+
+__Note:__  No need to forward the port on heroku it is done automatically & this uses http not https.
  
 
 ## create
@@ -169,10 +182,30 @@ release app
 if the last step worked load https://wordcount-pmc-stage.herokuapp.com in a browser
 tricia@acerubuntu1804:~/ecq/flaskpy-travis$
 ```
-## try it   
+## try it track it working   
+![load website works](flask-heroku-works.PNG)
+```
+tricia@acerubuntu1804:~/ecq/flaskpy-travis$ heroku logs --tail --app wordcount-pmc-stage
+...
+2020-05-04T20:53:37.292055+00:00 app[api]: Release v9 created by user pcampbell.edu@gmail.com
+2020-05-04T20:53:37.292055+00:00 app[api]: Deployed web (e6f5e636a593) by user pcampbell.edu@gmail.com
+2020-05-04T20:53:43.069593+00:00 heroku[web.1]: State changed from starting to up
+2020-05-04T20:53:42.996214+00:00 app[web.1]: * Serving Flask app "app" (lazy loading)
+2020-05-04T20:53:42.996229+00:00 app[web.1]: * Environment: production
+2020-05-04T20:53:42.996265+00:00 app[web.1]: WARNING: Do not use the development server in a production environment.
+2020-05-04T20:53:42.996299+00:00 app[web.1]: Use a production WSGI server instead.
+2020-05-04T20:53:42.996357+00:00 app[web.1]: * Debug mode: on
+2020-05-04T20:53:43.006416+00:00 app[web.1]: * Running on http://0.0.0.0:48527/ (Press CTRL+C to quit)
+2020-05-04T20:53:43.007092+00:00 app[web.1]: * Restarting with stat
+2020-05-04T20:53:43.257737+00:00 app[web.1]: * Debugger is active!
+2020-05-04T20:53:43.258226+00:00 app[web.1]: * Debugger PIN: 196-529-964
+2020-05-04T20:55:43.437880+00:00 heroku[router]: at=info method=GET path="/" host=wordcount-pmc-stage.herokuapp.com request_id=c1367255-d7cd-4437-97d2-ff4fd1039372 fwd="107.179.147.128" dyno=web.1 connect=0ms service=6ms status=200 bytes=234 protocol=http
+2020-05-04T20:55:43.435271+00:00 app[web.1]: 10.30.235.17 - - [04/May/2020 20:55:43] "GET / HTTP/1.1" 200 -
+```
+## try it track it before fix
 problems crashes
-![load website error(flask-heroku-error.PNG)
-## track it
+![load website error](flask-heroku-error.PNG)
+
 ```
 tricia@acerubuntu1804:~/ecq/flaskpy-travis$ heroku logs --tail --app wordcount-pmc-stage
 ...
