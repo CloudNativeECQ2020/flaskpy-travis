@@ -2,7 +2,7 @@
 # pkgs needed for app
 # if you've been testing locally, in an env then
 #  look at the output from pip freeze (or redirect here)
-Flask==1.0
+Flask==2.3.2
 gunicorn==19.5.0
 # python adapter for postgres
 #pscopyg2==2.8.4
